@@ -1,103 +1,186 @@
-# VIBEKISS COMMUNITY GUIDELINES
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>VIBEKISS | Community Guidelines</title>
+  <style>
+    :root {
+      --primary: #ff3b5c;
+      --text: #1a1a1a;
+      --light-text: #666;
+      --bg: #ffffff;
+      --section-bg: #f9f9f9;
+    }
 
-### ⚠️ Safety Reminder
-Your safety matters. While VIBEKISS provides reporting tools and moderation, users must always exercise personal judgment and caution.
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
 
-**For your safety:**
-* **Protect Info:** Keep your personal information private.
-* **Contact Details:** Be cautious when sharing phone numbers or socials.
-* **Public Places:** Always meet new people in public.
-* **Inform Others:** Tell friends or family if you plan to meet someone.
-* **Transportation:** Arrange your own way to and from meetings.
-* **Report:** Use the app to report suspicious or inappropriate behavior.
+    /* Top Navigation Bar */
+    .header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #eee;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+    }
 
-> **Trust your instincts. If something feels wrong, discontinue the interaction immediately.**
+    .back-btn {
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-right: 15px;
+    }
 
----
+    .header-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0;
+    }
 
-### Introduction
-VIBEKISS is committed to providing a safe, respectful, and authentic environment for adults. By using VIBEKISS, you agree to these guidelines. Violations may result in content removal, account suspension, or permanent termination.
+    /* Main Content Area */
+    .content {
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
----
+    h1 { font-size: 1.8rem; margin-bottom: 10px; color: var(--text); }
+    .last-updated { color: var(--light-text); font-size: 0.9rem; margin-bottom: 30px; }
 
-### 1. Age Requirement
-* Users must be at least **18 years old** (or the age of legal majority in your jurisdiction).
-* Accounts suspected of belonging to minors will be removed immediately.
-* VIBEKISS may report violations involving minors to relevant authorities.
+    /* Safety Reminder Box */
+    .safety-box {
+      background-color: #fff5f6;
+      border-left: 4px solid var(--primary);
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
 
-### 2. Respectful Conduct
-Treat others with dignity. Prohibited behavior includes:
-* Harassment, bullying, threats, or intimidation.
-* Abusive or degrading language.
-* Encouraging harmful or dangerous behavior.
-* Repeated unwanted contact after being declined.
+    .safety-box h3 { margin-top: 0; color: var(--primary); font-size: 1rem; }
+    .safety-box ul { padding-left: 20px; margin-bottom: 0; }
 
-### 3. Harassment and Abuse
-Intimidation and abusive behavior are strictly prohibited. This includes persistent unwanted messages, insults, emotional coercion, or pressuring others for sensitive personal information.
+    /* Section Headers */
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 40px;
+      color: var(--text);
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 8px;
+    }
 
-### 4. Hate Speech and Discrimination
-We have a zero-tolerance policy for hate speech targeting:
-* Race, ethnicity, or nationality.
-* Religion or disability.
-* Gender identity or sexual orientation.
+    h3 { font-size: 1.1rem; color: var(--primary); margin-top: 25px; }
 
-### 5. Authentic Profiles
-Users must represent themselves truthfully. You may not:
-* Create fake profiles or impersonate others.
-* Use images of celebrities or others without permission.
-* Provide misleading identity information.
+    p, li { font-size: 1rem; color: #333; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
 
-### 6. Profile Content Standards
-Content must comply with community standards. Prohibited content includes graphic violence, illegal activities, and hate symbols.
+    /* Regional Section Styling */
+    .regional-card {
+      background: var(--section-bg);
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
 
-### 7. Sexual Content and Solicitation
-VIBEKISS is a dating platform, not a place for explicit sexual content.
-* **Prohibited:** Sharing pornographic material or offering sexual services.
-* **Minors:** Content involving minors results in immediate termination and law enforcement reporting.
+    .flag { margin-right: 8px; }
 
-### 8. Manipulation and Coercive Behavior
-Users may not exploit others through fabricated emergencies, threatening reputational harm, or emotional manipulation.
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--light-text);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
 
-### 9. Scams and Financial Exploitation
-You may not use VIBEKISS for financial gain. This includes requesting money, gift cards, cryptocurrency, or promoting investment schemes.
+  <header class="header">
+    <a href="index.html" class="back-btn">‹</a>
+    <p class="header-title">Guidelines</p>
+  </header>
 
-### 10. Spam and Promotion
-Mass messaging, promotional links, and unauthorized marketing campaigns are prohibited.
+  <main class="content">
+    <h1>Community Guidelines</h1>
+    <p class="last-updated">Last Updated: March 2026</p>
 
-### 11. Privacy
-Respect the privacy of others. Do not share another person’s private information (doxing) or publish contact details without express consent.
+    <div class="safety-box">
+      <h3>⚠️ Safety Reminder</h3>
+      <ul>
+        <li>Protect your personal information.</li>
+        <li>Meet in public places.</li>
+        <li>Inform friends/family of your plans.</li>
+        <li>Arrange your own transportation.</li>
+      </ul>
+    </div>
 
-### 12. AI and Automation
-The use of bots, automated systems to simulate human interaction, or AI-generated fake accounts is strictly prohibited.
+    <p>VIBEKISS is a safe, respectful, and authentic environment. By using the platform, you agree to these standards.</p>
 
----
+    <h2>1. Age Requirement</h2>
+    <ul>
+      <li>You must be <strong>18+ years old</strong> to use VIBEKISS.</li>
+      <li>Underage accounts will be removed immediately without warning.</li>
+    </ul>
 
-### 13. Regional Supplemental Terms
+    <h2>2. Respectful Conduct</h2>
+    <p>Treat others with dignity. We strictly prohibit:</p>
+    <ul>
+      <li>Harassment, bullying, or intimidation.</li>
+      <li>Abusive or degrading language.</li>
+      <li>Unwanted contact after being declined.</li>
+    </ul>
 
-#### 🇨🇦 Canada
-* **Privacy:** Users have rights to access/rectify data per **PIPEDA** and provincial laws.
-* **Anti-Spam:** Compliance with **CASL** is required for all communications.
+    <h2>3. Hate Speech</h2>
+    <p>Zero tolerance for content targeting individuals based on race, religion, gender identity, sexual orientation, disability, or nationality.</p>
 
-#### 🇦🇺 Australia
-* **Online Safety:** We comply with eSafety Commissioner standards regarding cyber-bullying and image-based abuse.
-* **Consumer Law:** Statutory guarantees under the **ACL** are protected.
+    <h2>4. Sexual Content & Solicitation</h2>
+    <ul>
+      <li>No pornographic material or explicit imagery.</li>
+      <li>No requesting or offering sexual services.</li>
+      <li>Illegal content involving minors will be reported to NCMEC and law enforcement.</li>
+    </ul>
 
-#### 🇬🇧 United Kingdom
-* **Online Safety Act:** We maintain a duty of care to protect UK users from illegal content.
-* **GDPR:** Data is processed under the **UK GDPR** and Data Protection Act 2018.
+    <h2>5. Scams & Fraud</h2>
+    <p>Never send money to someone you meet on VIBEKISS. Prohibited: requesting gift cards, crypto, or investment solicitations.</p>
 
-#### 🇺🇸 United States
-* **Section 230:** VIBEKISS reserves the right to moderate content to ensure community safety.
-* **State Privacy:** Rights under the **CCPA/CPRA** apply to California residents.
-* **NCMEC:** Mandatory reporting of Child Sexual Abuse Material (CSAM).
+    <h2>6. Supplemental Terms</h2>
 
----
+    <div class="regional-card">
+      <p><strong><span class="flag">🇨🇦</span> Canada</strong><br>
+      Rights to access/delete data per PIPEDA and Quebec Law 25 apply.</p>
+    </div>
 
-### 14. Moderation and Liability
-* **Enforcement:** VIBEKISS reserves the right to investigate and remove content or accounts at its sole discretion.
-* **Liability:** To the maximum extent permitted by law, VIBEKISS is not liable for damages arising from user interactions.
-* **Updates:** These guidelines may be updated periodically; continued use indicates acceptance.
+    <div class="regional-card">
+      <p><strong><span class="flag">🇦🇺</span> Australia</strong><br>
+      Compliance with eSafety Commissioner standards regarding cyber-bullying.</p>
+    </div>
 
-### 15. Contact
-**Email:** support@vibekiss.com  
-**Platform:** VIBEKISS
+    <div class="regional-card">
+      <p><strong><span class="flag">🇬🇧</span> United Kingdom</strong><br>
+      Duty of care to protect users under the Online Safety Act.</p>
+    </div>
+
+    <div class="regional-card">
+      <p><strong><span class="flag">🇺🇸</span> United States</strong><br>
+      CCPA/CPRA rights for CA residents and NCMEC mandatory reporting.</p>
+    </div>
+
+    <footer>
+      &copy; 2026 VIBEKISS. For support: support@vibekiss.com
+    </footer>
+  </main>
+
+</body>
+</html>
