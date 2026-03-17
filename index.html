@@ -2,26 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VIBEKISS | Legal Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>VIBEKISS | Legal</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 40px 20px; background-color: #fff; }
-    h1 { color: #ff3b5c; text-align: center; letter-spacing: -1px; }
-    p { text-align: center; color: #666; }
-    ul { list-style: none; padding: 0; margin-top: 30px; }
-    li { margin-bottom: 15px; }
-    a { display: block; padding: 15px; background: #f8f9fa; border: 1px solid #eee; border-radius: 12px; text-decoration: none; color: #333; font-weight: 600; transition: all 0.2s; text-align: center; }
-    a:hover { background: #ff3b5c; color: #fff; border-color: #ff3b5c; }
+    :root { --primary-pink: #ff3b5c; --bg-gray: #f9f9f9; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+      margin: 0; padding: 20px; background-color: var(--bg-gray); color: #111;
+    }
+    .container { max-width: 500px; margin: 0 auto; text-align: center; }
+    h1 { font-size: 2.5rem; color: var(--primary-pink); margin-top: 40px; font-weight: 800; }
+    p { color: #666; font-size: 1rem; margin-bottom: 40px; }
+    
+    .legal-list { list-style: none; padding: 0; }
+    .legal-item { margin-bottom: 12px; }
+    
+    .legal-link {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 24px; background: white; border-radius: 16px;
+      text-decoration: none; color: #111; font-weight: 600; font-size: 1.1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform 0.1s;
+    }
+    .legal-link:active { transform: scale(0.98); background: #eee; }
+    .arrow { color: #ccc; font-size: 1.2rem; }
   </style>
 </head>
 <body>
-  <h1>VIBEKISS</h1>
-  <p>Legal & Community Center</p>
+  <div class="container">
+    <h1>VIBEKISS</h1>
+    <p>Legal & Safety Center</p>
 
-  <ul>
-    <li><a href="privacy.html">Privacy Policy</a></li>
-    <li><a href="terms.html">Terms of Service</a></li>
-    <li><a href="community-guidelines.html">Community Guidelines</a></li>
-  </ul>
+    <div class="legal-list">
+      <div class="legal-item">
+        <a href="privacy.html" class="legal-link">Privacy Policy <span class="arrow">›</span></a>
+      </div>
+      <div class="legal-item">
+        <a href="terms.html" class="legal-link">Terms of Service <span class="arrow">›</span></a>
+      </div>
+      <div class="legal-item">
+        <a href="community-guidelines.html" class="legal-link">Community Guidelines <span class="arrow">›</span></a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
