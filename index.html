@@ -9,6 +9,8 @@
     body { 
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
       margin: 0; padding: 20px; background-color: var(--bg-gray); color: #111;
+      /* Prevents blue highlight on tap in some mobile browsers */
+      -webkit-tap-highlight-color: transparent;
     }
     .container { max-width: 500px; margin: 0 auto; text-align: center; }
     h1 { font-size: 2.5rem; color: var(--primary-pink); margin-top: 40px; font-weight: 800; }
@@ -21,10 +23,16 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 18px 24px; background: white; border-radius: 16px;
       text-decoration: none; color: #111; font-weight: 600; font-size: 1.1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform 0.1s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: all 0.1s ease;
     }
-    .legal-link:active { transform: scale(0.98); background: #eee; }
-    .arrow { color: #ccc; font-size: 1.2rem; }
+    
+    /* Mobile hover/active state */
+    .legal-link:active { 
+      transform: scale(0.97); 
+      background-color: #f0f0f0; 
+    }
+    
+    .arrow { color: #ccc; font-size: 1.2rem; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -32,17 +40,28 @@
     <h1>VIBEKISS</h1>
     <p>Legal & Safety Center</p>
 
-    <div class="legal-list">
+    <nav class="legal-list">
       <div class="legal-item">
-        <a href="privacy.html" class="legal-link">Privacy Policy <span class="arrow">›</span></a>
+        <a href="privacy.html" class="legal-link">
+          <span>Privacy Policy</span> 
+          <span class="arrow">›</span>
+        </a>
       </div>
+
       <div class="legal-item">
-        <a href="terms.html" class="legal-link">Terms of Service <span class="arrow">›</span></a>
+        <a href="terms.html" class="legal-link">
+          <span>Terms of Service</span> 
+          <span class="arrow">›</span>
+        </a>
       </div>
+
       <div class="legal-item">
-        <a href="community-guidelines.html" class="legal-link">Community Guidelines <span class="arrow">›</span></a>
+        <a href="community-guidelines.html" class="legal-link">
+          <span>Community Guidelines</span> 
+          <span class="arrow">›</span>
+        </a>
       </div>
-    </div>
+    </nav>
   </div>
 </body>
 </html>
