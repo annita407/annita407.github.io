@@ -11,10 +11,13 @@
       margin: 0; padding: 20px; background-color: var(--bg-gray); color: #111;
       /* Prevents blue highlight on tap in some mobile browsers */
       -webkit-tap-highlight-color: transparent;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
-    .container { max-width: 500px; margin: 0 auto; text-align: center; }
-    h1 { font-size: 2.5rem; color: var(--primary-pink); margin-top: 40px; font-weight: 800; }
-    p { color: #666; font-size: 1rem; margin-bottom: 40px; }
+    .container { max-width: 500px; margin: 0 auto; text-align: center; flex: 1; }
+    h1 { font-size: 2.5rem; color: var(--primary-pink); margin-top: 40px; font-weight: 800; letter-spacing: 2px; }
+    p.subtitle { color: #666; font-size: 1rem; margin-bottom: 40px; }
     
     .legal-list { list-style: none; padding: 0; }
     .legal-item { margin-bottom: 12px; }
@@ -33,12 +36,27 @@
     }
     
     .arrow { color: #ccc; font-size: 1.2rem; font-weight: bold; }
+
+    /* --- Footer Styles --- */
+    footer {
+      margin-top: 60px;
+      padding-bottom: 40px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #999;
+      line-height: 1.6;
+    }
+    .company-info {
+      display: block;
+      margin-top: 4px;
+      font-weight: 500;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>VIBEKISS</h1>
-    <p>Legal & Safety Center</p>
+    <p class="subtitle">Legal & Safety Center</p>
 
     <nav class="legal-list">
       <div class="legal-item">
@@ -62,6 +80,11 @@
         </a>
       </div>
     </nav>
+
+    <footer>
+      <div class="copyright">&copy; 2026 VIBEKISS</div>
+      <div class="company-info">VIBEKISS is operated by THEWAY LIMITED, United Kingdom.</div>
+    </footer>
   </div>
 </body>
 </html>
