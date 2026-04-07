@@ -9,7 +9,6 @@
     body { 
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
       margin: 0; padding: 20px; background-color: var(--bg-gray); color: #111;
-      /* Prevents blue highlight on tap in some mobile browsers */
       -webkit-tap-highlight-color: transparent;
       display: flex;
       flex-direction: column;
@@ -29,7 +28,6 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: all 0.1s ease;
     }
     
-    /* Mobile hover/active state */
     .legal-link:active { 
       transform: scale(0.97); 
       background-color: #f0f0f0; 
@@ -37,7 +35,9 @@
     
     .arrow { color: #ccc; font-size: 1.2rem; font-weight: bold; }
 
-    /* --- Footer Styles --- */
+    /* Highlight the Delete option slightly differently to stand out for reviewers */
+    .delete-link { border: 1px solid #ffebeb; }
+
     footer {
       margin-top: 60px;
       padding-bottom: 40px;
@@ -76,6 +76,13 @@
       <div class="legal-item">
         <a href="community-guidelines.html" class="legal-link">
           <span>Community Guidelines</span> 
+          <span class="arrow">›</span>
+        </a>
+      </div>
+
+      <div class="legal-item">
+        <a href="delete-account.html" class="legal-link delete-link">
+          <span>Delete Account Request</span> 
           <span class="arrow">›</span>
         </a>
       </div>
