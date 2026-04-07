@@ -2,118 +2,140 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIBEKISS | Delete Account Request</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>VIBEKISS | Account Deletion Request</title>
     <style>
         :root { --primary-pink: #ff3b5c; --bg-gray: #f9f9f9; --text-dark: #111; }
+        
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             margin: 0; padding: 20px; background-color: var(--bg-gray); color: var(--text-dark);
             line-height: 1.6;
+            display: flex; flex-direction: column; min-height: 100vh;
         }
-        .container { max-width: 500px; margin: 40px auto; background: white; padding: 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        h1 { color: var(--primary-pink); font-size: 2rem; margin-top: 0; font-weight: 800; text-align: center; }
-        .intro { color: #666; font-size: 0.95rem; margin-bottom: 30px; text-align: center; }
+
+        .container { 
+            max-width: 500px; margin: 40px auto; background: white; padding: 35px; 
+            border-radius: 28px; box-shadow: 0 15px 35px rgba(0,0,0,0.06); 
+            flex: 1;
+        }
+
+        h1 { color: var(--primary-pink); font-size: 2.2rem; margin: 0 0 10px 0; font-weight: 800; text-align: center; letter-spacing: 1px; }
         
-        .form-group { margin-bottom: 20px; text-align: left; }
-        label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem; }
+        .intro { color: #666; font-size: 0.95rem; margin-bottom: 30px; text-align: center; padding: 0 10px; }
+        .legal-notice { font-size: 0.85rem; color: #888; background: #fdf2f4; padding: 12px; border-radius: 12px; margin-bottom: 25px; border-left: 4px solid var(--primary-pink); }
+
+        .form-group { margin-bottom: 22px; }
+        label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.9rem; color: #333; }
+        
         input, select, textarea { 
-            width: 100%; padding: 12px 16px; border: 1px solid #ddd; border-radius: 12px; 
-            font-size: 1rem; box-sizing: border-box; transition: border-color 0.2s;
+            width: 100%; padding: 14px 16px; border: 1.5px solid #eee; border-radius: 14px; 
+            font-size: 1rem; box-sizing: border-box; transition: all 0.2s ease;
+            background-color: #fafafa;
         }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary-pink); }
-        
-        .checkbox-group { display: flex; align-items: flex-start; gap: 10px; margin-top: 25px; }
-        .checkbox-group input { width: auto; margin-top: 5px; }
-        .checkbox-group label { font-weight: 400; font-size: 0.85rem; color: #444; }
+
+        input:focus, select:focus, textarea:focus { 
+            outline: none; border-color: var(--primary-pink); background-color: #fff;
+            box-shadow: 0 0 0 4px rgba(255, 59, 92, 0.1);
+        }
+
+        .checkbox-group { display: flex; align-items: flex-start; gap: 12px; margin: 25px 0; }
+        .checkbox-group input { width: 20px; height: 20px; margin-top: 3px; cursor: pointer; accent-color: var(--primary-pink); }
+        .checkbox-group label { font-weight: 500; font-size: 0.85rem; color: #555; line-height: 1.4; cursor: pointer; }
 
         button { 
-            width: 100%; padding: 16px; background: var(--primary-pink); color: white; 
-            border: none; border-radius: 15px; font-size: 1.1rem; font-weight: 700; 
-            cursor: pointer; margin-top: 30px; transition: opacity 0.2s;
+            width: 100%; padding: 18px; background: var(--primary-pink); color: white; 
+            border: none; border-radius: 18px; font-size: 1.1rem; font-weight: 800; 
+            cursor: pointer; transition: transform 0.1s, opacity 0.2s;
+            box-shadow: 0 8px 20px rgba(255, 59, 92, 0.3);
         }
-        button:hover { opacity: 0.9; }
-        
-        footer { text-align: center; margin-top: 30px; font-size: 0.85rem; color: #999; }
-        footer a { color: var(--text-dark); text-decoration: none; font-weight: 600; }
-        
-        #success-message { display: none; text-align: center; padding: 40px 20px; }
-        #success-message h2 { color: #2ecc71; }
+
+        button:active { transform: scale(0.98); }
+        button:disabled { background: #ccc; box-shadow: none; cursor: not-allowed; }
+
+        footer { text-align: center; margin-top: 40px; padding-bottom: 30px; font-size: 0.85rem; color: #aaa; }
+        footer a { color: #555; text-decoration: underline; font-weight: 600; }
+
+        #success-ui { display: none; text-align: center; padding: 50px 20px; }
+        .success-icon { font-size: 50px; color: #2ecc71; margin-bottom: 20px; }
     </style>
 </head>
 <body>
 
 <div class="container" id="form-container">
     <h1>VIBEKISS</h1>
-    <p class="intro">
-        Users can request deletion of their VIBEKISS account and associated personal data using this form. 
-        We may retain certain information where required for legal, security, or billing purposes.
-    </p>
+    <p class="intro">Account Deletion Request</p>
+    
+    <div class="legal-notice">
+        Some information may be retained where required for legal, security, fraud-prevention, or billing purposes.
+    </div>
 
-    <form id="deletion-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+    <form id="deletion-form" action="https://formspree.io/f/mgopdapv" method="POST">
         
         <div class="form-group">
             <label for="full-name">Full Name *</label>
-            <input type="text" id="full-name" name="Full Name" placeholder="Enter your full name" required>
+            <input type="text" id="full-name" name="full_name" placeholder="John Doe" required>
         </div>
 
         <div class="form-group">
             <label for="email">Email Address *</label>
-            <input type="email" id="email" name="Email" placeholder="Email linked to your account" required>
+            <input type="email" id="email" name="email" placeholder="email@example.com" required>
         </div>
 
         <div class="form-group">
             <label for="signin-method">Sign-in Method *</label>
-            <select id="signin-method" name="Sign-in Method" required>
-                <option value="" disabled selected>Select method</option>
+            <select id="signin-method" name="signin_method" required>
+                <option value="" disabled selected>How do you log in?</option>
                 <option value="Google">Google</option>
                 <option value="Apple">Apple</option>
             </select>
         </div>
 
         <div class="form-group">
-            <label for="username">Profile Username (Optional)</label>
-            <input type="text" id="username" name="Profile Name" placeholder="@username">
+            <label for="username">Username or Profile Name (Optional)</label>
+            <input type="text" id="username" name="username" placeholder="e.g. @john_vibe">
         </div>
 
         <div class="form-group">
-            <label for="reason">Reason for Deletion (Optional)</label>
-            <textarea id="reason" name="Reason" rows="3" placeholder="Tell us why you are leaving..."></textarea>
+            <label for="reason">Reason for deletion (Optional)</label>
+            <textarea id="reason" name="reason" rows="3" placeholder="We're sorry to see you go..."></textarea>
         </div>
 
         <div class="checkbox-group">
-            <input type="checkbox" id="confirm" name="Confirmed Deletion" required>
+            <input type="checkbox" id="confirm" name="confirmation_check" required>
             <label for="confirm">
-                I understand this request will permanently delete my account, my photos, and my profile data from VIBEKISS.
+                I understand this request may permanently delete my VIBEKISS account and associated data.
             </label>
         </div>
 
         <input type="text" name="_gotcha" style="display:none">
 
-        <button type="submit" id="submit-btn">Send Deletion Request</button>
+        <button type="submit" id="submit-btn">Request Account Deletion</button>
     </form>
 </div>
 
-<div class="container" id="success-message">
-    <h2>Request Sent!</h2>
-    <p>Your request has been received. We will process your account deletion shortly. You will receive a confirmation email once completed.</p>
-    <button onclick="window.location.reload()">Send another request</button>
+<div class="container" id="success-ui">
+    <div class="success-icon">✓</div>
+    <h2>Request Sent</h2>
+    <p>Your request has been sent. We will review and process it as soon as possible. You will receive an email once the deletion is complete.</p>
+    <button style="margin-top:20px; background:#f0f0f0; color:#333; box-shadow:none;" onclick="window.location.reload()">Back</button>
 </div>
 
 <footer>
     &copy; 2026 VIBEKISS | Operated by THEWAY LIMITED, UK<br>
-    <a href="privacy.html">Privacy Policy</a>
+    Read our <a href="privacy.html">Privacy Policy</a>
 </footer>
 
 <script>
     const form = document.getElementById('deletion-form');
     const formContainer = document.getElementById('form-container');
-    const successMessage = document.getElementById('success-message');
+    const successUI = document.getElementById('success-ui');
+    const btn = document.getElementById('submit-btn');
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const btn = document.getElementById('submit-btn');
-        btn.innerText = "Sending...";
+        
+        btn.innerText = "Processing...";
         btn.disabled = true;
 
         const formData = new FormData(form);
@@ -127,15 +149,17 @@
 
             if (response.ok) {
                 formContainer.style.display = 'none';
-                successMessage.style.display = 'block';
+                successUI.style.display = 'block';
+                window.scrollTo(0, 0);
             } else {
-                alert("Oops! There was a problem submitting your form. Please try again.");
-                btn.innerText = "Send Deletion Request";
+                const data = await response.json();
+                alert(data.error || "Submission failed. Please try again.");
+                btn.innerText = "Request Account Deletion";
                 btn.disabled = false;
             }
         } catch (error) {
-            alert("Connection error. Please check your internet.");
-            btn.innerText = "Send Deletion Request";
+            alert("Network error. Please check your connection.");
+            btn.innerText = "Request Account Deletion";
             btn.disabled = false;
         }
     });
