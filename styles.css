@@ -580,7 +580,9 @@ code {
 
 @media (max-width: 640px) {
   .container {
-    width: min(calc(100% - 1.2rem), var(--max-width));
+    width: 100%;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
   }
 
   .nav-bar {
@@ -593,6 +595,7 @@ code {
 
   .hero-grid {
     padding-bottom: 3rem;
+    gap: 1.5rem;
   }
 
   .hero-copy h1 {
@@ -611,6 +614,18 @@ code {
   .trust-card p,
   .screen-card figcaption {
     overflow-wrap: anywhere;
+  }
+
+  .hero-copy,
+  .hero-text,
+  .stat-card,
+  .feature-card,
+  .trust-card,
+  .screen-card,
+  .showcase-copy,
+  .trust-panel,
+  .download-card {
+    max-width: calc(100vw - 1.6rem);
   }
 
   .hero-actions {
