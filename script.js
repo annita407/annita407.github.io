@@ -1,4 +1,6 @@
 const revealItems = document.querySelectorAll(".reveal");
+const heroSlides = document.querySelectorAll(".hero-slide");
+const heroVideo = document.querySelector(".hero-background-video");
 
 const revealIfInView = (element) => {
   const rect = element.getBoundingClientRect();
@@ -31,3 +33,26 @@ revealItems.forEach((item) => {
     observer.observe(item);
   }
 });
+
+if (heroSlides.length > 1) {
+  let activeSlide = 0;
+
+  window.setInterval(() => {
+    heroSlides[activeSlide].classList.remove("is-active");
+    activeSlide = (activeSlide + 1) % heroSlides.length;
+    heroSlides[activeSlide].classList.add("is-active");
+  }, 4800);
+}
+
+if (heroVideo) {
+  const useFallbackSlides = () => {
+    heroVideo.classList.add("is-hidden");
+    document.body.classList.add("hero-video-fallback");
+  };
+
+  heroVideo.addEventListener("error", useFallbackSlides);
+
+  heroVideo.play().catch(() => {
+    useFallbackSlides();
+  });
+}
