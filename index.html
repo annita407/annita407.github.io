@@ -2,103 +2,247 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>VIBEKISS | Legal</title>
-  <style>
-    :root { --primary-pink: #ff3b5c; --bg-gray: #f9f9f9; }
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-      margin: 0; padding: 20px; background-color: var(--bg-gray); color: #111;
-      -webkit-tap-highlight-color: transparent;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    .container { max-width: 500px; margin: 0 auto; text-align: center; flex: 1; }
-    h1 { font-size: 2.5rem; color: var(--primary-pink); margin-top: 40px; font-weight: 800; letter-spacing: 2px; }
-    p.subtitle { color: #666; font-size: 1rem; margin-bottom: 40px; }
-    
-    .legal-list { list-style: none; padding: 0; }
-    .legal-item { margin-bottom: 12px; }
-    
-    .legal-link {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 24px; background: white; border-radius: 16px;
-      text-decoration: none; color: #111; font-weight: 600; font-size: 1.1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: all 0.1s ease;
-    }
-    
-    .legal-link:active { 
-      transform: scale(0.97); 
-      background-color: #f0f0f0; 
-    }
-    
-    .arrow { color: #ccc; font-size: 1.2rem; font-weight: bold; }
-
-    /* Highlight the Delete option slightly differently to stand out for reviewers */
-    .delete-link { border: 1px solid #ffebeb; }
-
-    footer {
-      margin-top: 60px;
-      padding-bottom: 40px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #999;
-      line-height: 1.6;
-    }
-    .company-info {
-      display: block;
-      margin-top: 4px;
-      font-weight: 500;
-    }
-  </style>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="VIBEKISS helps you meet new people, match with confidence, and start real conversations in a safe, modern dating community."
+  >
+  <meta name="theme-color" content="#160d1f">
+  <title>VIBEKISS | Dating That Feels Real</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="icon" type="image/svg+xml" href="assets/brand-mark.svg">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>VIBEKISS</h1>
-    <p class="subtitle">Legal & Safety Center</p>
-
-    <nav class="legal-list">
-      <div class="legal-item">
-        <a href="privacy.html" class="legal-link">
-          <span>Privacy Policy</span> 
-          <span class="arrow">›</span>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a class="brand" href="#top" aria-label="VIBEKISS home">
+          <img src="assets/brand-mark.svg" alt="" width="42" height="42">
+          <span>VIBEKISS</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#features">Features</a>
+          <a href="#screens">Preview</a>
+          <a href="#safety">Safety</a>
+          <a href="#download">Download</a>
+        </nav>
+        <a
+          class="button button-small"
+          href="https://play.google.com/store/apps/details?id=com.vibekiss.app&pcampaignid=web_share"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Google Play
         </a>
       </div>
+    </header>
 
-      <div class="legal-item">
-        <a href="terms.html" class="legal-link">
-          <span>Terms of Service</span> 
-          <span class="arrow">›</span>
-        </a>
+    <main id="top">
+      <section class="hero-section">
+        <div class="hero-backdrop" aria-hidden="true">
+          <img class="float-card card-one" src="assets/ambient-heart.svg" alt="">
+          <img class="float-card card-two" src="assets/ambient-orb.svg" alt="">
+          <img class="float-card card-three" src="assets/ambient-star.svg" alt="">
+        </div>
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Real chemistry. Modern dating.</p>
+            <h1>Meet people who match your vibe, not just your swipe.</h1>
+            <p class="hero-text">
+              VIBEKISS brings together thoughtful profiles, smart matching, and safer conversations
+              so every connection feels intentional from the first hello.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button button-primary"
+                href="https://play.google.com/store/apps/details?id=com.vibekiss.app&pcampaignid=web_share"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Download on Google Play
+              </a>
+              <a class="button button-secondary" href="#screens">See the experience</a>
+            </div>
+            <div class="hero-points">
+              <span>18+ community</span>
+              <span>Profile-first matching</span>
+              <span>Built for mobile</span>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="hero-glow"></div>
+            <div class="device device-main">
+              <img src="assets/hero-couple.svg" alt="VIBEKISS hero placeholder">
+            </div>
+            <div class="device device-side">
+              <img src="assets/screen-match.svg" alt="App preview placeholder">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-section">
+        <div class="container stats-grid reveal">
+          <article class="stat-card">
+            <strong>Curated matching</strong>
+            <p>Profiles built to highlight personality, interests, and real intent.</p>
+          </article>
+          <article class="stat-card">
+            <strong>Thoughtful messaging</strong>
+            <p>Start conversations with context instead of shallow one-line intros.</p>
+          </article>
+          <article class="stat-card">
+            <strong>Safer environment</strong>
+            <p>Community guidance and account controls that support respectful dating.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section" id="features">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Why VIBEKISS</p>
+            <h2>A premium dating brand feel, without the clutter.</h2>
+            <p>
+              The homepage is designed to guide visitors quickly from curiosity to confidence to
+              install.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card reveal">
+              <span class="feature-icon">01</span>
+              <h3>Meet New People</h3>
+              <p>Discover singles who share your energy, interests, and relationship goals.</p>
+            </article>
+            <article class="feature-card reveal">
+              <span class="feature-icon">02</span>
+              <h3>Smart Matching</h3>
+              <p>Better profile signals help surface connections that feel more natural.</p>
+            </article>
+            <article class="feature-card reveal">
+              <span class="feature-icon">03</span>
+              <h3>Safe Community</h3>
+              <p>Designed with trust, reporting, and clear community expectations in mind.</p>
+            </article>
+            <article class="feature-card reveal">
+              <span class="feature-icon">04</span>
+              <h3>Easy To Use</h3>
+              <p>A clean mobile-first experience that keeps every step simple and intuitive.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section showcase-section" id="screens">
+        <div class="container showcase-grid">
+          <div class="showcase-copy reveal">
+            <p class="eyebrow">Preview the platform</p>
+            <h2>Built to look polished on every screen.</h2>
+            <p>
+              Use these placeholders for now, then replace them with your real app screenshots
+              inside the <code>web/assets</code> folder later.
+            </p>
+            <ul class="feature-list">
+              <li>Hero image placeholder for brand visuals</li>
+              <li>Three screenshot placeholders ready to swap</li>
+              <li>Responsive card layout for mobile and desktop</li>
+            </ul>
+          </div>
+
+          <div class="screens-grid">
+            <figure class="screen-card reveal">
+              <img src="assets/screen-profile.svg" alt="Profile preview placeholder">
+              <figcaption>Profile preview</figcaption>
+            </figure>
+            <figure class="screen-card reveal">
+              <img src="assets/screen-chat.svg" alt="Conversation preview placeholder">
+              <figcaption>Chat preview</figcaption>
+            </figure>
+            <figure class="screen-card reveal">
+              <img src="assets/screen-match.svg" alt="Match preview placeholder">
+              <figcaption>Match preview</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section trust-section" id="safety">
+        <div class="container trust-grid">
+          <div class="trust-panel reveal">
+            <p class="eyebrow">Safety and trust</p>
+            <h2>A dating experience that feels warm, respectful, and more secure.</h2>
+            <p>
+              Stronger trust signals help visitors feel comfortable downloading the app and joining
+              the community.
+            </p>
+          </div>
+          <div class="trust-cards">
+            <article class="trust-card reveal">
+              <h3>Community standards</h3>
+              <p>Clear expectations support respectful conversations and better interactions.</p>
+            </article>
+            <article class="trust-card reveal">
+              <h3>Privacy minded</h3>
+              <p>Important legal and support links stay accessible without distracting from the CTA.</p>
+            </article>
+            <article class="trust-card reveal">
+              <h3>Confidence to connect</h3>
+              <p>Cleaner design and messaging make the brand feel credible from the first visit.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="download-section" id="download">
+        <div class="container download-card reveal">
+          <div>
+            <p class="eyebrow">Start now</p>
+            <h2>Download VIBEKISS and start your next connection today.</h2>
+            <p>
+              Send visitors directly to Google Play with a clear, high-visibility call to action.
+            </p>
+          </div>
+          <a
+            class="button button-primary button-large"
+            href="https://play.google.com/store/apps/details?id=com.vibekiss.app&pcampaignid=web_share"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Download on Google Play
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand brand-footer" href="#top">
+            <img src="assets/brand-mark.svg" alt="" width="38" height="38">
+            <span>VIBEKISS</span>
+          </a>
+          <p>A mobile-first dating platform designed to help real connections feel easier.</p>
+        </div>
+        <div class="footer-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="community-guidelines.html">Community Guidelines</a>
+          <a href="safety.html">Safety Tips</a>
+          <a href="delete-account.html">Delete Account Request</a>
+        </div>
       </div>
-
-      <div class="legal-item">
-        <a href="community-guidelines.html" class="legal-link">
-          <span>Community Guidelines</span> 
-          <span class="arrow">›</span>
-        </a>
-      </div>
-
-      <div class="legal-item">
-        <a href="safety.html" class="legal-link">
-          <span>Safety Tips</span> 
-          <span class="arrow">›</span>
-        </a>
-      </div>
-
-      <div class="legal-item">
-        <a href="delete-account.html" class="legal-link delete-link">
-          <span>Delete Account Request</span> 
-          <span class="arrow">›</span>
-        </a>
-      </div>
-    </nav>
-
-    <footer>
-      <div class="copyright">&copy; 2026 VIBEKISS</div>
-      <div class="company-info">VIBEKISS is operated by THEWAY LIMITED, United Kingdom.</div>
     </footer>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
