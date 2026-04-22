@@ -625,6 +625,7 @@ code {
   .showcase-copy,
   .trust-panel,
   .download-card {
+    width: 100%;
     max-width: calc(100vw - 1.6rem);
   }
 
