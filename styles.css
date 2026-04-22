@@ -360,7 +360,13 @@ body.hero-video-fallback .hero-slide.is-active {
   filter: blur(24px);
 }
 
-.device {
+.hero-photo-collage {
+  position: relative;
+  width: min(100%, 540px);
+  min-height: 500px;
+}
+
+.photo-panel {
   position: absolute;
   overflow: hidden;
   border-radius: 34px;
@@ -369,60 +375,127 @@ body.hero-video-fallback .hero-slide.is-active {
   box-shadow: var(--shadow);
 }
 
-.device img {
+.photo-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 8, 22, 0.08), rgba(16, 8, 22, 0.32));
+}
+
+.photo-panel img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.device-main {
+.photo-panel-tall {
   top: 1rem;
   right: 2rem;
   width: min(100%, 420px);
-  aspect-ratio: 0.86;
+  aspect-ratio: 0.8;
+  animation: floatPhotoTall 8s ease-in-out infinite;
 }
 
-.device-side {
-  bottom: 1.5rem;
+.photo-panel-wide {
   left: 0;
-  width: min(52%, 250px);
-  aspect-ratio: 0.72;
-}
-
-.screen-cluster {
-  position: relative;
-  width: min(100%, 540px);
-  min-height: 500px;
-}
-
-.screen-cluster .device {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
-}
-
-.device-back {
-  top: 2rem;
-  right: 0;
-  width: min(76%, 370px);
-  aspect-ratio: 0.68;
-  animation: floatDeckBack 7.2s ease-in-out infinite;
-}
-
-.device-main {
-  top: 6.5rem;
-  left: 4.5rem;
-  width: min(66%, 300px);
-  aspect-ratio: 0.52;
+  bottom: 5rem;
+  width: min(57%, 285px);
+  aspect-ratio: 0.88;
   z-index: 2;
-  animation: floatDeckMain 6.5s ease-in-out infinite;
+  animation: floatPhotoWide 7s ease-in-out infinite;
 }
 
-.device-front {
-  left: 0;
-  bottom: 2.6rem;
-  width: min(44%, 180px);
-  aspect-ratio: 0.52;
+.photo-panel-accent {
+  right: 1.2rem;
+  bottom: 0.7rem;
+  width: min(42%, 188px);
+  aspect-ratio: 0.78;
   z-index: 3;
-  animation: floatDeckFront 6.1s ease-in-out infinite;
+  animation: floatPhotoAccent 6.1s ease-in-out infinite;
+}
+
+.hero-orb,
+.hero-heart {
+  position: absolute;
+  pointer-events: none;
+}
+
+.hero-orb {
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 215, 168, 0.28) 0%, rgba(255, 215, 168, 0.04) 60%, transparent 72%);
+  filter: blur(6px);
+  animation: orbPulse 7.2s ease-in-out infinite;
+}
+
+.orb-one {
+  top: 3rem;
+  left: 1rem;
+  width: 150px;
+  height: 150px;
+}
+
+.orb-two {
+  right: 0.4rem;
+  bottom: 8rem;
+  width: 108px;
+  height: 108px;
+  animation-delay: 1.4s;
+}
+
+.hero-heart {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, rgba(255, 189, 208, 0.92), rgba(255, 94, 138, 0.9));
+  transform: rotate(45deg);
+  box-shadow: 0 0 22px rgba(255, 94, 138, 0.28);
+  animation: floatHeart 6.8s ease-in-out infinite;
+}
+
+.hero-heart::before,
+.hero-heart::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.hero-heart::before {
+  top: -9px;
+  left: 0;
+}
+
+.hero-heart::after {
+  top: 0;
+  left: -9px;
+}
+
+.heart-one {
+  top: 5.8rem;
+  right: 4.8rem;
+}
+
+.heart-two {
+  left: 2.8rem;
+  bottom: 2.6rem;
+  width: 14px;
+  height: 14px;
+  animation-delay: 0.8s;
+}
+
+.heart-two::before,
+.heart-two::after {
+  width: 14px;
+  height: 14px;
+}
+
+.heart-two::before {
+  top: -7px;
+}
+
+.heart-two::after {
+  left: -7px;
 }
 
 .hero-install-card {
@@ -504,7 +577,7 @@ body.hero-video-fallback .hero-slide.is-active {
 .trust-card,
 .download-card,
 .site-footer,
-.device {
+.photo-panel {
   backdrop-filter: blur(14px);
 }
 
@@ -689,36 +762,62 @@ body.hero-video-fallback .hero-slide.is-active {
   }
 }
 
-@keyframes floatDeckBack {
+@keyframes floatPhotoTall {
   0%,
   100% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) rotate(-2deg);
   }
 
   50% {
-    transform: translate3d(0, -8px, 0);
+    transform: translate3d(0, -10px, 0) rotate(-3.5deg);
   }
 }
 
-@keyframes floatDeckMain {
+@keyframes floatPhotoWide {
   0%,
   100% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) rotate(3deg);
   }
 
   50% {
-    transform: translate3d(0, -12px, 0);
+    transform: translate3d(0, -8px, 0) rotate(1deg);
   }
 }
 
-@keyframes floatDeckFront {
+@keyframes floatPhotoAccent {
   0%,
   100% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) rotate(6deg);
   }
 
   50% {
-    transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -12px, 0) rotate(4deg);
+  }
+}
+
+@keyframes floatHeart {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(45deg) scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: translate3d(0, -10px, 0) rotate(45deg) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes orbPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.82;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
   }
 }
 
@@ -789,23 +888,24 @@ body.hero-video-fallback .hero-slide.is-active {
     justify-items: center;
   }
 
-  .screen-cluster {
+  .hero-photo-collage {
     width: min(100%, 470px);
     min-height: 460px;
   }
 
-  .device-back {
-    right: 0.4rem;
-    width: min(72%, 330px);
+  .photo-panel-tall {
+    right: 1rem;
+    width: min(78%, 360px);
   }
 
-  .device-main {
-    left: 2.4rem;
-    width: min(63%, 280px);
+  .photo-panel-wide {
+    width: min(54%, 255px);
+    bottom: 4.7rem;
   }
 
-  .device-front {
-    width: min(41%, 170px);
+  .photo-panel-accent {
+    width: min(39%, 175px);
+    right: 0.6rem;
   }
 
   .hero-install-card {
@@ -814,10 +914,19 @@ body.hero-video-fallback .hero-slide.is-active {
 }
 
 @media (max-width: 640px) {
+  .page-shell,
+  .hero-section,
+  .stats-section,
+  .content-section,
+  .download-section,
+  .site-footer {
+    overflow-x: clip;
+  }
+
   .container {
     width: 100%;
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
   }
 
   .nav-bar {
@@ -831,6 +940,26 @@ body.hero-video-fallback .hero-slide.is-active {
   .hero-grid {
     padding-bottom: 3rem;
     gap: 1.5rem;
+  }
+
+  .hero-grid,
+  .stats-grid,
+  .feature-grid,
+  .showcase-grid,
+  .trust-grid,
+  .trust-cards,
+  .footer-grid,
+  .screens-grid,
+  .download-card,
+  .hero-copy,
+  .hero-visual,
+  .section-heading,
+  .showcase-copy,
+  .trust-panel {
+    width: calc(100vw - 2.4rem);
+    max-width: calc(100vw - 2.4rem);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-copy h1 {
@@ -859,9 +988,15 @@ body.hero-video-fallback .hero-slide.is-active {
   .screen-card,
   .showcase-copy,
   .trust-panel,
-  .download-card {
+  .download-card,
+  .section-heading,
+  .stats-grid,
+  .feature-grid,
+  .screens-grid,
+  .trust-cards,
+  .hero-install-card {
     width: 100%;
-    max-width: calc(100vw - 1.6rem);
+    max-width: 100%;
   }
 
   .hero-actions {
@@ -878,32 +1013,62 @@ body.hero-video-fallback .hero-slide.is-active {
   }
 
   .hero-visual {
-    min-height: 560px;
+    min-height: 600px;
     margin-top: 0.8rem;
     justify-items: stretch;
   }
 
-  .screen-cluster {
+  .hero-photo-collage {
     width: 100%;
-    min-height: 380px;
+    min-height: 420px;
+    max-width: calc(100vw - 2.4rem);
+    margin: 0 auto;
   }
 
-  .device-back {
+  .photo-panel {
+    border-radius: 28px;
+  }
+
+  .photo-panel-tall {
     top: 0;
-    right: 0;
-    width: min(72%, 270px);
+    right: 0.2rem;
+    width: min(72%, 255px);
   }
 
-  .device-main {
-    top: 4rem;
-    left: 1rem;
-    width: min(62%, 230px);
-  }
-
-  .device-front {
+  .photo-panel-wide {
     left: 0;
-    bottom: 2rem;
-    width: min(42%, 150px);
+    bottom: 4.5rem;
+    width: min(56%, 205px);
+  }
+
+  .photo-panel-accent {
+    right: 0.3rem;
+    bottom: 0.5rem;
+    width: min(42%, 145px);
+  }
+
+  .orb-one {
+    top: 1.2rem;
+    left: 0.1rem;
+    width: 110px;
+    height: 110px;
+  }
+
+  .orb-two {
+    right: -0.2rem;
+    bottom: 7.2rem;
+    width: 86px;
+    height: 86px;
+  }
+
+  .heart-one {
+    top: 3.6rem;
+    right: 3.4rem;
+  }
+
+  .heart-two {
+    left: 1.2rem;
+    bottom: 1.6rem;
   }
 
   .hero-install-card {
@@ -911,6 +1076,12 @@ body.hero-video-fallback .hero-slide.is-active {
     max-width: none;
     margin-top: 0.4rem;
     padding: 1rem 1rem 1.15rem;
+  }
+
+  .hero-install-button,
+  .download-card .button-large {
+    width: 100%;
+    min-width: 0;
   }
 
   .hero-install-card strong {
@@ -953,9 +1124,11 @@ body.hero-video-fallback .hero-slide.is-active {
   .button,
   .brand-kicker,
   .brand-line,
-  .device-back,
-  .device-main,
-  .device-front {
+  .photo-panel-tall,
+  .photo-panel-wide,
+  .photo-panel-accent,
+  .hero-heart,
+  .hero-orb {
     animation: none;
     transition: none;
   }
